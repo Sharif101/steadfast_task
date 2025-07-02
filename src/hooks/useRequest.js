@@ -17,9 +17,6 @@ export const handleFetch = async (endPoint, params = {}) => {
       cache: "no-store",
     });
 
-    console.log("Response status:", response.status);
-    console.log("Response headers:", [...response.headers.entries()]);
-
     const text = await response.text();
     console.log("Raw response text:", text);
 
