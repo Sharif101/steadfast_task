@@ -6,6 +6,8 @@ export const handleFetch = async (endPoint, params = {}) => {
       ? "?" + new URLSearchParams(params).toString()
       : "";
 
+    console.log("Fetch URL:", `${api}/${endPoint}${queryString}`); // <-- debug
+
     const response = await fetch(`${api}/${endPoint}${queryString}`, {
       headers: {
         "Content-Type": "application/json",
