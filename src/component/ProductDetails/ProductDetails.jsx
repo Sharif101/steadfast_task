@@ -238,15 +238,6 @@ export default function ProductDetails({ productDetails }) {
             <h3 className="font-semibold mb-4">Delivery Options</h3>
 
             <div className="flex items-start gap-3 mb-3">
-              <div className="text-green-600">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M3.172 5H4a1 1 0 011 1v1h10V6a1 1 0 011-1h.828a1 1 0 01.707 1.707L16.414 8H3.586l-1.121-1.293A1 1 0 013.172 5z" />
-                </svg>
-              </div>
               <div>
                 <p className="font-medium">Regular</p>
                 <p className="text-gray-500">Delivery within 2-3 days</p>
@@ -254,15 +245,6 @@ export default function ProductDetails({ productDetails }) {
             </div>
 
             <div className="flex items-start gap-3 opacity-50">
-              <div className="text-gray-400">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M3.172 5H4a1 1 0 011 1v1h10V6a1 1 0 011-1h.828a1 1 0 01.707 1.707L16.414 8H3.586l-1.121-1.293A1 1 0 013.172 5z" />
-                </svg>
-              </div>
               <div>
                 <p className="font-medium text-red-500">
                   Express{" "}
