@@ -6,9 +6,10 @@ export const handleFetch = async (endPoint, params = {}) => {
       ? "?" + new URLSearchParams(params).toString()
       : "";
 
-    console.log("Fetch URL:", `${api}/${endPoint}${queryString}`); // <-- debug
+    const url = `${api}/${endPoint}${queryString}`;
+    console.log("Fetch URL:", url);
 
-    const response = await fetch(`${api}/${endPoint}${queryString}`, {
+    const response = await fetch(url, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -16,11 +17,14 @@ export const handleFetch = async (endPoint, params = {}) => {
       cache: "no-store",
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    console.log("Response status:", response.status);
+    console.log("Response headers:", [...response.headers.entries()]);
 
-    return await response.json();
+    const text = await response.text();
+    console.log("Raw response text:", text);
+
+    const data = JSON.parse(text);
+    return data;
   } catch (error) {
     console.error("Fetch error:", error);
     return null;
